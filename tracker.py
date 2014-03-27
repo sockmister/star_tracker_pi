@@ -57,8 +57,11 @@ def parse_commands(line):
 				GPIO.cleanup()
 				sys.exit()
 
-def calculate_angle(turns):
+def old_calculate_angle(turns):
 		return (-10**-18)*(turns)**3 + (20**-11)*(turns)**2 + 5*10**-5*(turns)
+
+def calculate_angle(turns):
+		return (5*10**-18)*(turns)**3 + (1*10**-12)*(turns)**2 + (6*10**-5)*(turns) - 0.7136
 
 def sleep_for(difference):
 		return (86164/360) * diff
